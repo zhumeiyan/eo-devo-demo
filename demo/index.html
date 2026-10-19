@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>涌现有机体 · 发育动力学线 — 演示台</title>
+<style>
+:root{
+  --bg:#0a0e13; --panel:#101722; --card:#16202c; --line:#26313f;
+  --tx:#e7ecf3; --tx2:#9aa8ba; --tx3:#6b7a8c;
+  /* 六层阶数，每层一色 —— 颜色有语义，不是装饰 */
+  --k0:#35c4b0; --k1:#5ea8ff; --k2:#b985e8; --k3:#e8a14d; --k4:#e0677a; --k5:#8b8f96;
+  --hit:#35c4b0; --miss:#e0677a; --part:#e8a14d; --accent:#5ea8ff;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:var(--sans);line-height:1.75;-webkit-font-smoothing:antialiased;padding:0 20px 90px}
+.wrap{max-width:920px;margin:0 auto}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(10,14,19,.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);margin:0 -20px 0;padding:0 20px}
+nav .wrap{display:flex;gap:6px;overflow-x:auto;padding:11px 0;scrollbar-width:none}
+nav .wrap::-webkit-scrollbar{display:none}
+nav a{flex:none;font:400 12.5px/1 var(--sans);color:var(--tx2);text-decoration:none;
+  padding:7px 13px;border-radius:999px;border:1px solid transparent;white-space:nowrap;transition:.18s}
+nav a:hover{color:var(--tx);background:var(--card);border-color:var(--line)}
+
+/* hero */
+header{padding:70px 0 54px;border-bottom:1px solid var(--line)}
+.eyebrow{font:400 11.5px/1 var(--mono);letter-spacing:.24em;color:var(--accent);text-transform:uppercase;margin-bottom:20px}
+h1{font-size:clamp(28px,6.2vw,46px);font-weight:300;letter-spacing:-.01em;line-height:1.3}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{margin-top:22px;font-size:16px;color:var(--tx2);max-width:660px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.badge{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;min-width:132px}
+.badge .v{font:500 25px/1.15 var(--mono);letter-spacing:-.02em}
+.badge .v.c0{color:var(--k0)} .badge .v.c1{color:var(--k3)} .badge .v.c2{color:var(--k2)}
+.badge .k{font-size:11.5px;color:var(--tx3);margin-top:7px;letter-spacing:.04em}
+
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+h2{font-size:22px;font-weight:400;letter-spacing:-.005em;margin-bottom:10px;display:flex;align-items:center;gap:11px}
+h2::before{content:'';width:3px;height:19px;background:var(--accent);border-radius:2px;flex:none}
+.sub{font-size:13.5px;color:var(--tx3);margin-bottom:26px}
+
+/* 探索器 */
+.explorer{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
+.srow{display:flex;align-items:center;gap:16px;margin-bottom:6px}
+.srow label{font:400 12px/1 var(--mono);color:var(--tx3);letter-spacing:.1em;flex:none}
+input[type=range]{flex:1;height:3px;-webkit-appearance:none;background:var(--line);border-radius:2px;outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:19px;height:19px;border-radius:50%;
+  background:var(--accent);cursor:pointer;border:3px solid var(--bg);box-shadow:0 0 0 1px var(--accent)}
+.bval{font:500 20px/1 var(--mono);color:var(--accent);min-width:74px;text-align:right;flex:none}
+.tick{display:flex;justify-content:space-between;font:400 9.5px/1 var(--mono);color:var(--tx3);margin-top:9px;padding:0 2px}
+.verdict{margin-top:18px;font-size:14px;color:var(--tx2);min-height:44px;
+  border-left:2px solid var(--line);padding-left:14px}
+.verdict b{color:var(--tx);font-weight:500}
+.vtag{display:inline-block;font:500 11px/1 var(--mono);padding:4px 9px;border-radius:5px;margin-right:9px}
+.vtag.ok{background:rgba(53,196,176,.14);color:var(--k0)}
+.vtag.warn{background:rgba(232,161,77,.14);color:var(--k3)}
+.vtag.bad{background:rgba(224,103,122,.14);color:var(--k4)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-top:20px}
+.stat{background:var(--card);padding:13px 15px}
+.stat .n{font:500 17px/1.2 var(--mono)}
+.stat .l{font-size:10.5px;color:var(--tx3);margin-top:5px}
+svg{display:block;width:100%;height:auto;margin-top:22px;overflow:visible}
+.axis{stroke:var(--line);stroke-width:1}
+.grid{stroke:var(--line);stroke-width:1;stroke-dasharray:3 5;opacity:.5}
+.thresh{stroke:var(--k4);stroke-width:1;stroke-dasharray:5 4;opacity:.65}
+.lbl{font:400 9.5px var(--mono);fill:var(--tx3)}
+
+/* 阴性对照 */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card .ttl{font-size:14.5px;font-weight:500;margin-bottom:9px}
+.card .num{font:500 21px/1.2 var(--mono);color:var(--k3)}
+.card .dsc{font-size:12.5px;color:var(--tx2);margin-top:9px;line-height:1.7}
+.card .tag{display:inline-block;font:500 10px/1 var(--mono);padding:3px 8px;border-radius:4px;
+  background:rgba(53,196,176,.13);color:var(--k0);margin-bottom:11px}
+
+/* 预言表 */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.fbtn{font:400 12.5px/1 var(--sans);padding:8px 15px;border-radius:999px;cursor:pointer;
+  background:var(--card);border:1px solid var(--line);color:var(--tx2);transition:.16s}
+.fbtn:hover{color:var(--tx)}
+.fbtn.on{background:var(--accent);border-color:var(--accent);color:#08111c;font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font:500 11px/1 var(--mono);color:var(--tx3);letter-spacing:.1em;
+  padding:0 12px 11px;border-bottom:1px solid var(--line)}
+td{padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--tx2)}
+tr.hide{display:none}
+td.src{font:400 11.5px var(--mono);color:var(--tx3);white-space:nowrap}
+td.claim{color:var(--tx)}
+td.real{font:400 12.5px var(--mono)}
+.mk{font:500 11px/1 var(--mono);padding:4px 8px;border-radius:4px;white-space:nowrap}
+.mk.hit{background:rgba(53,196,176,.14);color:var(--hit)}
+.mk.miss{background:rgba(224,103,122,.14);color:var(--miss)}
+.mk.part{background:rgba(232,161,77,.14);color:var(--part)}
+
+.note{background:var(--card);border:1px solid var(--line);border-left:2px solid var(--part);
+  border-radius:0 11px 11px 0;padding:16px 19px;font-size:13px;color:var(--tx2);margin-top:22px}
+.note b{color:var(--part);font-weight:500}
+ul.fail{list-style:none;margin-top:6px}
+ul.fail li{padding:12px 0 12px 20px;border-bottom:1px solid var(--line);font-size:13px;color:var(--tx2);position:relative}
+ul.fail li::before{content:'—';position:absolute;left:0;color:var(--tx3);font-family:var(--mono)}
+ul.fail li b{color:var(--tx);font-weight:500}
+footer{padding:40px 0 0;font-size:11.5px;color:var(--tx3);line-height:1.9}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a href="#inflect">拐点探索器</a>
+  <a href="#negative">三个阴性</a>
+  <a href="#prophecy">预言核验</a>
+  <a href="#failures">失败清单</a>
+</div></nav>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Emergent Organism · Devo Line</div>
+  <h1>给一次数字生命发育实验，<br>测出多样性<em>开始分层的最小权重</em>。</h1>
+  <p class="lede">一套可重跑的发育链路：分化 → 局部盲视 → 器官 → 边界 → 集成。三条支柱指标、多样性分层的临界权重 β*≈0.02，以及全部失败记录——都在这里，可复现。</p>
+  <div class="badges">
+    <div class="badge"><div class="v c0">0.02</div><div class="k">拐点 β*</div></div>
+    <div class="badge"><div class="v c1">4/8 → 0/8</div><div class="k">崩塌率台阶</div></div>
+    <div class="badge"><div class="v c2">−0.0076</div><div class="k">准确率代价（一次性）</div></div>
+  </div>
+</header>
+
+<section id="inflect">
+  <h2>拐点探索器</h2>
+  <p class="sub">拖动滑块改变独特性权重 β。曲线是 8 个种子的实测末代多样性熵，虚线为崩塌阈值 H&lt;0.5。数据来自 exp211，40 代演化，未做任何平滑。</p>
+  <div class="explorer">
+    <div class="srow">
+      <label>β</label>
+      <input type="range" id="bslider" min="0" max="8" step="1" value="0">
+      <div class="bval" id="bval">0.00</div>
+    </div>
+    <div class="tick"><span>0</span><span>.01</span><span>.02</span><span>.05</span><span>.1</span><span>.2</span><span>.4</span><span>.8</span><span>1.6</span></div>
+    <svg viewBox="0 0 860 260" id="chart"></svg>
+    <div class="stats">
+      <div class="stat"><div class="n" id="sH">—</div><div class="l">末代熵 H</div></div>
+      <div class="stat"><div class="n" id="sC">—</div><div class="l">崩塌 /8</div></div>
+      <div class="stat"><div class="n" id="sL">—</div><div class="l">共存层数</div></div>
+      <div class="stat"><div class="n" id="sA">—</div><div class="l">准确率</div></div>
+      <div class="stat"><div class="n" id="sS">—</div><div class="l">± 种子标准差</div></div>
+    </div>
+    <div class="verdict" id="verdict"></div>
+  </div>
+</section>
+
+<section id="negative">
+  <h2>三个阴性对照</h2>
+  <p class="sub">这三条都是「加大投入没有回报」。它们的价值不在于好看，在于划掉了三条明显的歧路。</p>
+  <div class="grid">
+    <div class="card"><span class="tag">176 · 扩容</span>
+      <div class="ttl">模型容量 ×4.9</div><div class="num">增益 −0.0001</div>
+      <div class="dsc">参数从 2029 涨到 9936，交叉熵纹丝不动。扩容不是解药。</div></div>
+    <div class="card"><span class="tag">207 · 厮杀</span>
+      <div class="ttl">种子数 1 → 16</div><div class="num">收益 0.016 bits</div>
+      <div class="dsc">种子间 top-1 一致率 0.75（随机基线 0.0008）。它们不是厮杀，是趋同。</div></div>
+    <div class="card"><span class="tag">211 · 加量</span>
+      <div class="ttl">β 从 0.02 → 1.6（×80）</div><div class="num">熵 1.33 → 1.43</div>
+      <div class="dsc">过了拐点全是平台。重要的不是剂量，是这根轴存不存在。</div></div>
+  </div>
+</section>
+
+<section id="prophecy">
+  <h2>预言核验 · 15 条</h2>
+  <p class="sub">我曾在五个不存在的实验里编过预言。212 把它们真跑了一遍。这是罕见的「预言在先、验证在后」——可以测我编的东西有多少是真的。</p>
+  <div class="filters">
+    <button class="fbtn on" data-f="all">全部 15</button>
+    <button class="fbtn" data-f="hit">命中</button>
+    <button class="fbtn" data-f="miss">落空</button>
+    <button class="fbtn" data-f="part">存疑</button>
+  </div>
+  <table><thead><tr><th>来源</th><th>我当初声称</th><th>实测</th><th>判定</th></tr></thead>
+  <tbody id="ptable"></tbody></table>
+  <div class="note"><b>一处未消解的不一致：</b>表格按标记计为 7 条命中、7 条落空、1 条存疑；但 212 报告正文写的是「命中 5/15」。我没有抹平这个数字差异，两条都保留在此。</div>
+  <div class="note"><b>唯一真正的规律：</b>能靠公式推出来的（184 的布朗位移，纯演绎），精确命中到三位有效数字；需要实测才知道的（通道堆叠的边际、活度绝对值、语料统计），全部落空。我编数字的能力，止于演绎。</div>
+</section>
+
+<section id="failures">
+  <h2>失败清单</h2>
+  <p class="sub">独立记录，不藏在正文里。完整版见仓库 SELF_FAILURES.md。</p>
+  <ul class="fail">
+    <li><b>五个空编号被当实测引用</b>（181 / 184 / 186 / 190 / 191）。201 号审计查出，其中 191 的「对齐悖论」还当了四轮后续论证的地基。</li>
+    <li><b>181 号违反集合论。</b>欲望句是全文本的子集，我却声称它比全集覆盖率高 86%——子集覆盖率上限就是 0%。我编了一个不可能的数字。</li>
+    <li><b>拿错尺子 14 次。</b>最隐蔽的一次：用 bits 衡量情感记忆的价值，而 bits 恰恰是「工作能力」那把尺子。用 A 的尺子量 B，量出来当然说 A 赢。</li>
+    <li><b>212 的口径教训。</b>崩塌判定是 H&lt;0.5，不是 H=0。本页第一版用错口径，差点把 4/8 报成 1/8，差点误判自己。</li>
+    <li><b>推送路径。</b>本地分支是 master 而我一直说 main；且本环境 git push 被网关挡，必须以远端回读为准，不以本地命令成功为准。</li>
+  </ul>
+</section>
+
+<footer>
+  稿件 1163 配套材料 · 涌现有机体存在论 · 朱美岩<br>
+  全部数字来自仓库内原始结果文件（exp176/207/211/212），可复现，未做人工调整。<br>
+  CC BY 4.0 · 许可见 LICENSE
+</footer>
+</div>
+
+<script>
+const D=[
+ {b:"0.00",H:0.7333,sd:0.4652,H5:1.0525,c:4,L:2.25,a:0.14971,hl:[-0.0,0.469,0.469,0.8813,1.2955,1.361,0.9219,0.469]},
+ {b:"0.01",H:0.8598,sd:0.4777,H5:1.0833,c:2,L:2.375,a:0.14715,hl:[0.9219,-0.0,0.469,1.1568,0.7219,1.571,0.8813,1.1568]},
+ {b:"0.02",H:1.3294,sd:0.3061,H5:1.1672,c:0,L:3.00,a:0.14213,hl:[1.1568,1.361,1.8464,1.371,0.9219,1.5219,1.4855,0.971]},
+ {b:"0.05",H:1.3609,sd:0.2564,H5:1.1052,c:0,L:3.125,a:0.13922,hl:[1.1568,1.361,1.2955,1.0,1.571,1.8464,1.2955,1.361]},
+ {b:"0.10",H:1.3555,sd:0.2402,H5:1.1758,c:0,L:3.25,a:0.14494,hl:[0.8813,1.571,1.371,1.1568,1.361,1.361,1.571,1.571]},
+ {b:"0.20",H:1.2562,sd:0.2777,H5:1.2538,c:0,L:3.00,a:0.14519,hl:[1.361,1.5219,0.971,0.9219,1.571,1.4855,0.9219,1.2955]},
+ {b:"0.40",H:1.2139,sd:0.6086,H5:1.2827,c:1,L:3.125,a:0.13640,hl:[1.5219,0.9219,1.7219,-0.0,1.8955,1.571,1.1568,0.9219]},
+ {b:"0.80",H:1.2308,sd:0.3211,H5:1.3656,c:1,L:3.00,a:0.14286,hl:[1.4855,1.361,1.1568,0.469,1.361,1.2955,1.3568,1.361]},
+ {b:"1.60",H:1.4310,sd:0.2077,H5:1.3485,c:0,L:3.125,a:0.13994,hl:[1.571,1.1568,1.4855,1.8464,1.361,1.371,1.2955,1.361]}
+];
+const P=[
+ ["181","欲望句预测未来话题 +86%","−50.8%","miss","反了"],
+ ["181","欲望句 vs 等量随机 +68%","−4.3%","miss",""],
+ ["181","用词预测 −4%","−9.6%","part","方向对量级差"],
+ ["181","守恒场命中/未命中 0.72 = 0.72","0.188 vs 0.070","miss","不等"],
+ ["181","覆盖率 23.4%","12.3%","miss",""],
+ ["184","布朗窗口 0.1–12 μm","0.1006–12.24 μm","hit","精确命中"],
+ ["184","佩兰 0.25μm 位移 1.4μm","1.41 μm","hit",""],
+ ["184","12μm→203nm / 100μm→70nm","203nm / 70.3nm","hit",""],
+ ["186","叠加活度 0.025→0.125（5×）","比值 0.0085，L0 为负","miss",""],
+ ["186","L2（加你的话）涨最多","delta +5.97，最大","hit","方向对"],
+ ["186","L5（加 sha）反而掉","delta −0.0005","hit","方向对，量级极小"],
+ ["190","七通道 0.109→0.486（4.5×）","0.2465→0.1917，比值 0.78","miss","实为下降"],
+ ["190","首个通道大涨","0.2465→0.5728（+132%）","hit",""],
+ ["190","冗余器官 −47%","未实现（设计错误）","miss",""],
+ ["191","α=1 净价值 = 0","0.0000","hit","但构造必然"]
+];
+
+// 表格
+const tb=document.getElementById('ptable');
+P.forEach(r=>{
+  const tr=document.createElement('tr'); tr.dataset.k=r[3];
+  const mk=r[3]==='hit'?'✓':r[3]==='miss'?'✗':'△';
+  tr.innerHTML=`<td class="src">${r[0]}</td><td class="claim">${r[1]}</td>`+
+    `<td class="real">${r[2]}</td><td><span class="mk ${r[3]}">${mk} ${r[4]||''}</span></td>`;
+  tb.appendChild(tr);
+});
+document.querySelectorAll('.fbtn').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on'); const f=b.dataset.f;
+  document.querySelectorAll('#ptable tr').forEach(tr=>{
+    tr.classList.toggle('hide', f!=='all' && tr.dataset.k!==f);
+  });
+});
+
+// 图
+const W=860,Ht=260,PL=44,PR=16,PT=16,PB=38;
+const xw=(W-PL-PR)/8, ymax=1.7;
+const X=i=>PL+i*xw, Y=v=>PT+(Ht-PT-PB)*(1-v/ymax);
+function draw(){
+  const i=+document.getElementById('bslider').value, d=D[i];
+  document.getElementById('bval').textContent=d.b;
+  let s=`<line class="axis" x1="${PL}" y1="${PT}" x2="${PL}" y2="${Ht-PB}"/>
+         <line class="axis" x1="${PL}" y1="${Ht-PB}" x2="${W-PR}" y2="${Ht-PB}"/>`;
+  [0,0.5,1.0,1.5].forEach(v=>{
+    s+=`<line class="grid" x1="${PL}" y1="${Y(v)}" x2="${W-PR}" y2="${Y(v)}"/>
+        <text class="lbl" x="${PL-8}" y="${Y(v)+3}" text-anchor="end">${v.toFixed(1)}</text>`;
+  });
+  s+=`<line class="thresh" x1="${PL}" y1="${Y(0.5)}" x2="${W-PR}" y2="${Y(0.5)}"/>
+      <text class="lbl" x="${W-PR}" y="${Y(0.5)-6}" text-anchor="end" fill="#e0677a">崩塌阈值 0.5</text>`;
+  // 折线
+  const pts=D.map((p,k)=>`${X(k)},${Y(p.H)}`).join(' ');
+  s+=`<polyline points="${pts}" fill="none" stroke="#5ea8ff" stroke-width="2" stroke-linejoin="round"/>`;
+  // 8 seed 散点
+  D.forEach((p,k)=>{ p.hl.forEach(v=>{
+    s+=`<circle cx="${X(k)}" cy="${Y(v)}" r="1.9" fill="#5ea8ff" opacity=".26"/>`;
+  });});
+  // 当前点
+  D.forEach((p,k)=>{
+    const on=k===i;
+    s+=`<circle cx="${X(k)}" cy="${Y(p.H)}" r="${on?7:4}" fill="${on?'#e8a14d':'#0a0e13'}"
+        stroke="${on?'#e8a14d':'#5ea8ff'}" stroke-width="2"/>`;
+  });
+  s+=`<text class="lbl" x="${X(i)}" y="${Y(d.H)-16}" text-anchor="middle"
+      fill="#e8a14d" style="font-size:12px">${d.H.toFixed(3)}</text>`;
+  D.forEach((p,k)=>{
+    s+=`<text class="lbl" x="${X(k)}" y="${Ht-PB+16}" text-anchor="middle">${p.b}</text>`;
+  });
+  document.getElementById('chart').innerHTML=s;
+  // 数值
+  document.getElementById('sH').textContent=d.H.toFixed(3);
+  document.getElementById('sH').style.color=d.c?'#e0677a':'#35c4b0';
+  document.getElementById('sC').textContent=d.c+'/8';
+  document.getElementById('sC').style.color=d.c?'#e0677a':'#35c4b0';
+  document.getElementById('sL').textContent=d.L.toFixed(2);
+  document.getElementById('sA').textContent=d.a.toFixed(4);
+  document.getElementById('sS').textContent='±'+d.sd.toFixed(3);
+  // 判语
+  let v,t,c;
+  if(i===0){t='bad';c='起点';v=`没有任何独特性奖励，8 个种子里有 <b>${d.c} 个</b>末代熵跌破 0.5——种群塌回同一层。这是默认状态，不是异常。`;}
+  else if(i===1){t='warn';c='临界前夜';v=`崩塌降到 <b>2/8</b>，熵 0.86。<b>还没过线</b>——拐点在下一格。`;}
+  else if(i===2){t='ok';c='拐点';v=`<b>就是这里。</b>崩塌首次归零（0/8），熵从 0.86 跳到 <b>1.33</b>，共存层数 2.38→3.00。代价是准确率 0.1497→0.1421，<b>一次性付清</b>。`;}
+  else {t='ok';c='平台';v=`β=${d.b}（相对拐点 ×${(parseFloat(d.b)/0.02).toFixed(0)}），熵 ${d.H.toFixed(3)}。<b>加大剂量不再带来台阶</b>——重要的从来不是量，是这根轴在不在。`;}
+  document.getElementById('verdict').innerHTML=
+    `<span class="vtag ${t}">${c}</span>${v}`;
+}
+document.getElementById('bslider').oninput=draw;
+draw();
+</script>
+
+<section id="mapping">
+  <h2>这套东西对接什么</h2>
+  <p class="sub">不是自我展示。每一个出口都指向一个外部可核对的对象。</p>
+  <div class="grid">
+    <div class="card"><span class="tag">论文</span>
+      <div class="ttl">稿件 1163</div><div class="num">submission-1163</div>
+      <div class="dsc">本仓库是它的<b>可复现附件</b>，直接回答审稿意见 W1（可复现性）。丢了它，W1 就答不了。</div></div>
+    <div class="card"><span class="tag">指标</span>
+      <div class="ttl">三条支柱</div><div class="num">0.734 · 2.35 · 99.1%</div>
+      <div class="dsc">器官 ICC 0.734 · 跨块因果 t=2.35 · 消融回落 99.1%。标签：实现验证，非证据。</div></div>
+    <div class="card"><span class="tag">判据</span>
+      <div class="ttl">判据核</div><div class="num">800+ 条</div>
+      <div class="dsc">跨会话存活的失败判据。新增一条的标准只有一句：这次失败会不会再犯。</div></div>
+    <div class="card"><span class="tag">失败</span>
+      <div class="ttl">SELF_FAILURES</div><div class="num">命中 5/15</div>
+      <div class="dsc">我编过的预言里，能公式推的全对、需实测的全错。含 15 次拿错尺子记录。</div></div>
+  </div>
+</section>
+
+<section id="try">
+  <h2>用你自己的文本试</h2>
+  <p class="sub">粘贴任意一段中文或代码。这里算的是<b>字符熵</b>与<b>独特三元组占比</b>——正是 211 号里那根「独特性」轴的原始量。</p>
+  <textarea id="txt" rows="6" placeholder="把你的文本粘在这里……" style="width:100%;box-sizing:border-box;background:#0d1218;color:#dfe6ee;border:1px solid #22303e;border-radius:10px;padding:14px;font-family:inherit;font-size:14px;line-height:1.7;resize:vertical"></textarea>
+  <div class="stats" style="margin-top:14px">
+    <div class="stat"><div class="n" id="tH">—</div><div class="l">字符熵 bits</div></div>
+    <div class="stat"><div class="n" id="tV">—</div><div class="l">字表大小</div></div>
+    <div class="stat"><div class="n" id="tU">—</div><div class="l">独特三元组占比</div></div>
+  </div>
+  <div class="verdict" id="tverdict" style="margin-top:14px">基线：判据核（347,507 字符）· 字符熵 <b>8.141</b> · 独特三元组 <b>0.2639</b>。</div>
+</section>
+
+<script>
+function tdraw(){
+ const el=document.getElementById('txt'), t=el.value;
+ const H=document.getElementById('tH'),V=document.getElementById('tV'),U=document.getElementById('tU'),W=document.getElementById('tverdict');
+ if(t.length<100){H.textContent='—';V.textContent='—';U.textContent='—';
+   W.innerHTML='至少需要 100 个字符（当前 '+t.length+' 个）。';return;}
+ const c={};for(const ch of t)c[ch]=(c[ch]||0)+1;
+ const n=t.length,h=-(Object.keys(c).reduce(function(a,k){var p=c[k]/n;return a+p*Math.log2(p);},0));
+ const vs=Object.keys(c).length;
+ const s=new Set();for(let i=0;i<t.length-2;i++)s.add(t.slice(i,i+3));
+ const ur=s.size/Math.max(1,t.length-2);
+ H.textContent=h.toFixed(3);V.textContent=vs;U.textContent=(ur*100).toFixed(1)+'%';
+ let tag,v;
+ if(ur>=0.35){tag='ok';v='<b>高独特性。</b>新组合占比 '+(ur*100).toFixed(1)+'%，高于基线 26.4%。按 211 号：独特性越高，那根轴越不能省——而它的临界权重只要 2%。';}
+ else if(ur>=0.20){tag='warn';v='<b>接近基线。</b>新组合占比 '+(ur*100).toFixed(1)+'%（基线 26.4%）。这类文本落在中间带——正是我们反复测到的那个「活只在中间」的区间。';}
+ else{tag='bad';v='<b>高重复。</b>新组合仅 '+(ur*100).toFixed(1)+'%，远低于基线 26.4%。重复结构会压垮独特性信号——这也是 207 号种子趋同测到的东西（一致率 0.75）。';}
+ W.innerHTML='<span class="vtag '+tag+'">'+(ur>=0.35?'高独特':(ur>=0.20?'中间带':'高重复'))+'</span>'+v;
+}
+document.getElementById('txt').oninput=tdraw;
+</script>
+
+</body>
+</html>
