@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-label="枝晶生长：左未分层，右分层">
+<style>
+ text{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;}
+ .lbl{font-size:26px;font-weight:600;letter-spacing:1px;}
+ .sub{font-size:20px;}
+ .tick{font-size:18px;}
+ .k{font-size:15px;letter-spacing:.5px;}
+ .cap{font-size:22px;font-weight:600;}
+ .capd{font-size:17px;}
+ .halo{opacity:.10;}
+
+ .ag{stroke-dasharray:var(--L);stroke-dashoffset:var(--L);
+   animation:agrow 0.55s ease-out forwards;}
+ @keyframes agrow{to{stroke-dashoffset:0;}}
+ .an{opacity:0;animation:apop .4s ease-out forwards;}
+ @keyframes apop{to{opacity:1;}}
+
+ .bg{stroke-dasharray:var(--L);stroke-dashoffset:var(--L);
+   animation:bgrow 0.55s ease-out forwards;}
+ @keyframes bgrow{to{stroke-dashoffset:0;}}
+ .bn{opacity:0;animation:bpop .4s ease-out forwards;}
+ @keyframes bpop{to{opacity:1;}}
+.ring{transform-origin:300px 220px;animation:rot 24s linear infinite;}@keyframes rot{to{transform:rotate(360deg);}}.ring2{transform-origin:860px 220px;animation:rot 16s linear infinite;}</style>
+<rect width="1200" height="420" fill="#0d1117"/>
+<circle class="halo" cx="300" cy="220" r="150" fill="none" stroke="#4a9a8f" stroke-width="1.5"/>
+<circle class="ring halo" cx="300" cy="220" r="126" fill="none" stroke="#4a9a8f" stroke-width="2" stroke-dasharray="6 14"/>
+<circle class="halo" cx="860" cy="220" r="168" fill="none" stroke="#c99a3f" stroke-width="1.5"/>
+<circle class="ring2 halo" cx="860" cy="220" r="142" fill="none" stroke="#c99a3f" stroke-width="2" stroke-dasharray="3 9"/>
+<line x1="300.0" y1="324.0" x2="300.0" y2="220.0" stroke="#4a9a8f" stroke-width="4.20" stroke-linecap="round" fill="none" class="ag" style="--L:104.0;animation-delay:0.00s"/>
+<line x1="300.0" y1="220.0" x2="252.9" y2="154.0" stroke="#4a9a8f" stroke-width="3.58" stroke-linecap="round" fill="none" class="ag" style="--L:81.1;animation-delay:0.45s"/>
+<circle cx="252.9" cy="154.0" r="2.30" fill="#4a9a8f" class="agn" style="animation-delay:0.80s"/>
+<line x1="300.0" y1="220.0" x2="347.1" y2="154.0" stroke="#4a9a8f" stroke-width="3.58" stroke-linecap="round" fill="none" class="ag" style="--L:81.1;animation-delay:0.45s"/>
+<circle cx="347.1" cy="154.0" r="2.30" fill="#4a9a8f" class="agn" style="animation-delay:0.80s"/>
+<line x1="860.0" y1="324.0" x2="860.0" y2="236.0" stroke="#4a9a8f" stroke-width="4.20" stroke-linecap="round" fill="none" class="bg" style="--L:88.0;animation-delay:0.00s"/>
+<line x1="860.0" y1="236.0" x2="820.1" y2="180.1" stroke="#66b98a" stroke-width="3.58" stroke-linecap="round" fill="none" class="bg" style="--L:68.6;animation-delay:0.45s"/>
+<line x1="820.1" y1="180.1" x2="770.7" y2="159.6" stroke="#c99a3f" stroke-width="2.96" stroke-linecap="round" fill="none" class="bg" style="--L:53.5;animation-delay:0.90s"/>
+<line x1="770.7" y1="159.6" x2="729.1" y2="164.2" stroke="#d97b3a" stroke-width="2.34" stroke-linecap="round" fill="none" class="bg" style="--L:41.8;animation-delay:1.35s"/>
+<line x1="729.1" y1="164.2" x2="701.6" y2="181.5" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:32.6;animation-delay:1.80s"/>
+<circle cx="701.6" cy="181.5" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="729.1" y1="164.2" x2="698.5" y2="153.3" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:32.6;animation-delay:1.80s"/>
+<circle cx="698.5" cy="153.3" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="770.7" y1="159.6" x2="744.5" y2="127.1" stroke="#d97b3a" stroke-width="2.34" stroke-linecap="round" fill="none" class="bg" style="--L:41.8;animation-delay:1.35s"/>
+<line x1="744.5" y1="127.1" x2="715.1" y2="113.1" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:32.6;animation-delay:1.80s"/>
+<circle cx="715.1" cy="113.1" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="744.5" y1="127.1" x2="737.3" y2="95.3" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:32.6;animation-delay:1.80s"/>
+<circle cx="737.3" cy="95.3" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="820.1" y1="180.1" x2="816.8" y2="126.7" stroke="#c99a3f" stroke-width="2.96" stroke-linecap="round" fill="none" class="bg" style="--L:53.5;animation-delay:0.90s"/>
+<line x1="816.8" y1="126.7" x2="794.5" y2="91.4" stroke="#d97b3a" stroke-width="2.34" stroke-linecap="round" fill="none" class="bg" style="--L:41.8;animation-delay:1.35s"/>
+<line x1="794.5" y1="91.4" x2="766.8" y2="74.3" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:32.6;animation-delay:1.80s"/>
+<circle cx="766.8" cy="74.3" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="794.5" y1="91.4" x2="790.8" y2="59.0" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:32.6;animation-delay:1.80s"/>
+<circle cx="790.8" cy="59.0" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="816.8" y1="126.7" x2="834.6" y2="88.9" stroke="#d97b3a" stroke-width="2.34" stroke-linecap="round" fill="none" class="bg" style="--L:41.8;animation-delay:1.35s"/>
+<line x1="834.6" y1="88.9" x2="834.2" y2="56.3" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:32.6;animation-delay:1.80s"/>
+<circle cx="834.2" cy="56.3" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="834.6" y1="88.9" x2="860.0" y2="68.5" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:32.6;animation-delay:1.80s"/>
+<circle cx="860.0" cy="68.5" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="820.1" y1="180.1" x2="797.2" y2="140.8" stroke="#c99a3f" stroke-width="2.96" stroke-linecap="round" fill="none" class="bg" style="--L:45.5;animation-delay:0.90s"/>
+<line x1="797.2" y1="140.8" x2="766.8" y2="122.6" stroke="#d97b3a" stroke-width="2.34" stroke-linecap="round" fill="none" class="bg" style="--L:35.5;animation-delay:1.35s"/>
+<line x1="766.8" y1="122.6" x2="739.2" y2="120.1" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:27.7;animation-delay:1.80s"/>
+<circle cx="739.2" cy="120.1" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="766.8" y1="122.6" x2="751.6" y2="99.4" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:27.7;animation-delay:1.80s"/>
+<circle cx="751.6" cy="99.4" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="797.2" y1="140.8" x2="796.3" y2="105.3" stroke="#d97b3a" stroke-width="2.34" stroke-linecap="round" fill="none" class="bg" style="--L:35.5;animation-delay:1.35s"/>
+<line x1="796.3" y1="105.3" x2="783.5" y2="80.8" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:27.7;animation-delay:1.80s"/>
+<circle cx="783.5" cy="80.8" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="796.3" y1="105.3" x2="807.7" y2="80.1" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:27.7;animation-delay:1.80s"/>
+<circle cx="807.7" cy="80.1" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="860.0" y1="236.0" x2="899.9" y2="180.1" stroke="#66b98a" stroke-width="3.58" stroke-linecap="round" fill="none" class="bg" style="--L:68.6;animation-delay:0.45s"/>
+<line x1="899.9" y1="180.1" x2="903.2" y2="126.7" stroke="#c99a3f" stroke-width="2.96" stroke-linecap="round" fill="none" class="bg" style="--L:53.5;animation-delay:0.90s"/>
+<line x1="903.2" y1="126.7" x2="885.4" y2="88.9" stroke="#d97b3a" stroke-width="2.34" stroke-linecap="round" fill="none" class="bg" style="--L:41.8;animation-delay:1.35s"/>
+<line x1="885.4" y1="88.9" x2="860.0" y2="68.5" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:32.6;animation-delay:1.80s"/>
+<circle cx="860.0" cy="68.5" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="885.4" y1="88.9" x2="885.8" y2="56.3" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:32.6;animation-delay:1.80s"/>
+<circle cx="885.8" cy="56.3" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="903.2" y1="126.7" x2="925.5" y2="91.4" stroke="#d97b3a" stroke-width="2.34" stroke-linecap="round" fill="none" class="bg" style="--L:41.8;animation-delay:1.35s"/>
+<line x1="925.5" y1="91.4" x2="929.2" y2="59.0" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:32.6;animation-delay:1.80s"/>
+<circle cx="929.2" cy="59.0" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="925.5" y1="91.4" x2="953.2" y2="74.3" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:32.6;animation-delay:1.80s"/>
+<circle cx="953.2" cy="74.3" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="899.9" y1="180.1" x2="949.3" y2="159.6" stroke="#c99a3f" stroke-width="2.96" stroke-linecap="round" fill="none" class="bg" style="--L:53.5;animation-delay:0.90s"/>
+<line x1="949.3" y1="159.6" x2="975.5" y2="127.1" stroke="#d97b3a" stroke-width="2.34" stroke-linecap="round" fill="none" class="bg" style="--L:41.8;animation-delay:1.35s"/>
+<line x1="975.5" y1="127.1" x2="982.7" y2="95.3" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:32.6;animation-delay:1.80s"/>
+<circle cx="982.7" cy="95.3" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="975.5" y1="127.1" x2="1004.9" y2="113.1" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:32.6;animation-delay:1.80s"/>
+<circle cx="1004.9" cy="113.1" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="949.3" y1="159.6" x2="990.9" y2="164.2" stroke="#d97b3a" stroke-width="2.34" stroke-linecap="round" fill="none" class="bg" style="--L:41.8;animation-delay:1.35s"/>
+<line x1="990.9" y1="164.2" x2="1021.5" y2="153.3" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:32.6;animation-delay:1.80s"/>
+<circle cx="1021.5" cy="153.3" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="990.9" y1="164.2" x2="1018.4" y2="181.5" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:32.6;animation-delay:1.80s"/>
+<circle cx="1018.4" cy="181.5" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="899.9" y1="180.1" x2="928.9" y2="145.1" stroke="#c99a3f" stroke-width="2.96" stroke-linecap="round" fill="none" class="bg" style="--L:45.5;animation-delay:0.90s"/>
+<line x1="928.9" y1="145.1" x2="935.6" y2="110.2" stroke="#d97b3a" stroke-width="2.34" stroke-linecap="round" fill="none" class="bg" style="--L:35.5;animation-delay:1.35s"/>
+<line x1="935.6" y1="110.2" x2="928.4" y2="83.5" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:27.7;animation-delay:1.80s"/>
+<circle cx="928.4" cy="83.5" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="935.6" y1="110.2" x2="952.2" y2="88.0" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:27.7;animation-delay:1.80s"/>
+<circle cx="952.2" cy="88.0" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="928.9" y1="145.1" x2="961.9" y2="132.0" stroke="#d97b3a" stroke-width="2.34" stroke-linecap="round" fill="none" class="bg" style="--L:35.5;animation-delay:1.35s"/>
+<line x1="961.9" y1="132.0" x2="980.6" y2="111.6" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:27.7;animation-delay:1.80s"/>
+<circle cx="980.6" cy="111.6" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="961.9" y1="132.0" x2="989.5" y2="134.1" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:27.7;animation-delay:1.80s"/>
+<circle cx="989.5" cy="134.1" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="860.0" y1="236.0" x2="862.9" y2="177.7" stroke="#66b98a" stroke-width="3.58" stroke-linecap="round" fill="none" class="bg" style="--L:58.3;animation-delay:0.45s"/>
+<line x1="862.9" y1="177.7" x2="840.8" y2="138.0" stroke="#c99a3f" stroke-width="2.96" stroke-linecap="round" fill="none" class="bg" style="--L:45.5;animation-delay:0.90s"/>
+<line x1="840.8" y1="138.0" x2="810.7" y2="119.1" stroke="#d97b3a" stroke-width="2.34" stroke-linecap="round" fill="none" class="bg" style="--L:35.5;animation-delay:1.35s"/>
+<line x1="810.7" y1="119.1" x2="783.2" y2="116.1" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:27.7;animation-delay:1.80s"/>
+<circle cx="783.2" cy="116.1" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="810.7" y1="119.1" x2="796.0" y2="95.6" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:27.7;animation-delay:1.80s"/>
+<circle cx="796.0" cy="95.6" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="840.8" y1="138.0" x2="840.6" y2="102.5" stroke="#d97b3a" stroke-width="2.34" stroke-linecap="round" fill="none" class="bg" style="--L:35.5;animation-delay:1.35s"/>
+<line x1="840.6" y1="102.5" x2="828.3" y2="77.6" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:27.7;animation-delay:1.80s"/>
+<circle cx="828.3" cy="77.6" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="840.6" y1="102.5" x2="852.5" y2="77.5" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:27.7;animation-delay:1.80s"/>
+<circle cx="852.5" cy="77.5" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="862.9" y1="177.7" x2="888.9" y2="140.4" stroke="#c99a3f" stroke-width="2.96" stroke-linecap="round" fill="none" class="bg" style="--L:45.5;animation-delay:0.90s"/>
+<line x1="888.9" y1="140.4" x2="892.6" y2="105.1" stroke="#d97b3a" stroke-width="2.34" stroke-linecap="round" fill="none" class="bg" style="--L:35.5;animation-delay:1.35s"/>
+<line x1="892.6" y1="105.1" x2="883.2" y2="79.0" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:27.7;animation-delay:1.80s"/>
+<circle cx="883.2" cy="79.0" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="892.6" y1="105.1" x2="907.3" y2="81.6" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:27.7;animation-delay:1.80s"/>
+<circle cx="907.3" cy="81.6" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="888.9" y1="140.4" x2="920.7" y2="124.6" stroke="#d97b3a" stroke-width="2.34" stroke-linecap="round" fill="none" class="bg" style="--L:35.5;animation-delay:1.35s"/>
+<line x1="920.7" y1="124.6" x2="937.6" y2="102.7" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:27.7;animation-delay:1.80s"/>
+<circle cx="937.6" cy="102.7" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<line x1="920.7" y1="124.6" x2="948.4" y2="124.3" stroke="#b3564a" stroke-width="1.72" stroke-linecap="round" fill="none" class="bg" style="--L:27.7;animation-delay:1.80s"/>
+<circle cx="948.4" cy="124.3" r="1.40" fill="#b3564a" class="bgn" style="animation-delay:2.15s"/>
+<text x="300" y="368" class="cap" fill="#8b949e" text-anchor="middle">β = 0　未分层</text>
+<text x="300" y="394" class="capd" fill="#5c6773" text-anchor="middle">多样性 0.000 · 层数 2.25</text>
+<text x="860" y="368" class="cap" fill="#c99a3f" text-anchor="middle">β* ≈ 0.02　分层</text>
+<text x="860" y="394" class="capd" fill="#8b949e" text-anchor="middle">多样性 1.011 · 层数 3.00 · 六阶共存</text>
+<text x="56" y="62" class="lbl" fill="#e6edf3">EO devo</text>
+<text x="56" y="92" class="sub" fill="#8b949e">一个数字胚胎，什么时候开始长出层次</text>
+<rect x="774" y="44" width="42" height="5" fill="#4a9a8f"/>
+<text x="774" y="72" class="k" fill="#8b949e">k0</text>
+<rect x="848" y="44" width="42" height="5" fill="#66b98a"/>
+<text x="848" y="72" class="k" fill="#8b949e">k1</text>
+<rect x="922" y="44" width="42" height="5" fill="#c99a3f"/>
+<text x="922" y="72" class="k" fill="#8b949e">k2</text>
+<rect x="996" y="44" width="42" height="5" fill="#d97b3a"/>
+<text x="996" y="72" class="k" fill="#8b949e">k3</text>
+<rect x="1070" y="44" width="42" height="5" fill="#b3564a"/>
+<text x="1070" y="72" class="k" fill="#8b949e">k4</text>
+<rect x="1144" y="44" width="42" height="5" fill="#8b949e"/>
+<text x="1144" y="72" class="k" fill="#8b949e">k5</text>
+</svg>
