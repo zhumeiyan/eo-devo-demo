@@ -1,47 +1,63 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>EO devo · 演示台</title>
+<title>EO devo · 一页到底</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#0e1116;color:#e6e8ea;
-font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;padding:24px 16px 60px;max-width:900px;margin:0 auto}
+font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;padding:20px 14px 60px;max-width:920px;margin:0 auto}
 h1{font-size:22px;margin:0 0 6px;letter-spacing:.5px}
-.sub{color:#9aa4ae;font-size:14px;margin:0 0 24px;line-height:1.6}
-a.card{display:block;background:#161b22;border:1px solid #262c36;border-radius:10px;
-padding:14px 16px;margin-bottom:12px;text-decoration:none;color:#e6e8ea}
-a.card:hover{border-color:#3d4756}
-.t{font-size:15px;font-weight:600;margin-bottom:4px}
-.d{font-size:13px;color:#9aa4ae;line-height:1.5}
-.tag{display:inline-block;font-size:11px;background:#1f2630;color:#8b98a5;
-border-radius:4px;padding:2px 7px;margin-left:8px;vertical-align:1px}
-img{width:100%;border-radius:8px;display:block;margin:10px 0}
-hr{border:0;border-top:1px solid #262c36;margin:28px 0}
-h2{font-size:16px;margin:0 0 12px;color:#c9d1d9}
+.sub{color:#9aa4ae;font-size:14px;margin:0 0 8px;line-height:1.6}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.b{font-size:12px;background:#161b22;border:1px solid #262c36;border-radius:6px;padding:5px 10px;color:#c9d1d9}
+.b em{font-style:normal;color:#e3b341;font-weight:700}
+h2{font-size:16px;margin:26px 0 10px;color:#c9d1d9;padding-top:14px;border-top:1px solid #262c36}
+h2:first-of-type{border-top:0;padding-top:0}
+img{width:100%;border-radius:8px;display:block;margin:8px 0;background:#0b0e12}
+iframe{width:100%;height:620px;border:1px solid #262c36;border-radius:8px;background:#0b0e12;margin:8px 0}
+.d{font-size:13px;color:#9aa4ae;line-height:1.6;margin:6px 0}
+a{color:#58a6ff}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.row a{font-size:12px;background:#161b22;border:1px solid #262c36;border-radius:6px;
+padding:6px 11px;text-decoration:none;color:#c9d1d9}
+.row a:hover{border-color:#3d4756}
 </style></head><body>
-<h1>EO devo · 演示台</h1>
-<p class="sub">稿件 1163 配套。一个数字胚胎从单细胞发育到器官的过程中，<br>什么时候开始长出层次？答案是：拐点 β* ≈ 0.02。</p>
 
-<h2>先看成品</h2>
-<a class="card" href="demo/index.html"><div class="t">可交互演示台<span class="tag">能拖滑块</span></div>
-<div class="d">拖 β 滑块看拐点，粘贴任意文本实时算独特三元组占比</div></a>
-<a class="card" href="assets/preview-percolation.png"><div class="t">渗流阈值成品图<span class="tag">PNG</span></div>
-<div class="d">左 p=0.35 无贯通簇 · 右 p=0.65 出现分层贯通簇</div></a>
+<h1>EO devo · 一页到底</h1>
+<p class="sub">一个数字胚胎从单细胞发育到器官的过程中，<b>什么时候开始长出层次</b>？<br>
+答案：拐点 <b>β* ≈ 0.02</b>——独特性只要 2%，种群就从"全挤一层"变成"分层共存"。</p>
+<div class="badges">
+<span class="b">拐点 <em>β* ≈ 0.02</em></span>
+<span class="b">崩塌 <em>4/8 → 0/8</em></span>
+<span class="b">熵 <em>0.86 → 1.33</em></span>
+<span class="b">代价 <em>−0.0076</em></span>
+<span class="b">加大 80 倍 <em>无趋势</em></span>
+</div>
 
-<hr><h2>渗流阈值（胜出母题）</h2>
-<img src="assets/preview-percolation.png" alt="渗流预览">
-<div class="d">同构于 211 号实测：β&lt;0.02 崩塌 4/8 → β*≈0.02 台阶 → β 加大 80 倍无趋势。<br>
-渗流是唯一同时命中阈值 T + 平台 P + 不可逆 I 三个结构签名的母题。</div>
+<h2>① 成品图（渗流阈值）</h2>
+<img src="assets/preview-percolation.png" alt="渗流阈值成品图">
+<p class="d">左 p=0.35：只有孤立小岛，全同色。右 p=0.65：贯通簇出现，六色分层。<br>
+同构于 211 号实测——渗流是唯一同时命中<b>阈值 T + 平台 P + 不可逆 I</b> 三个结构签名的母题。</p>
 
-<hr><h2>动态状态 SVG（浏览器打开才有动画）</h2>
-<a class="card" href="assets/hero-percolation.svg"><div class="t">Hero · 渗流<span class="tag">1200×420</span></div>
-<div class="d">右边一格一格点亮的过程，就是台阶</div></a>
-<a class="card" href="assets/states-percolation.svg"><div class="t">六状态 · 渗流<span class="tag">六种呼吸相</span></div>
-<div class="d">idle / thinking / busy / blocked / error / success</div></a>
-<a class="card" href="assets/states-dendrite.svg"><div class="t">六状态 · 枝晶<span class="tag">被刷下去的那版</span></div>
-<div class="d">只命中 T+B+O，缺平台与不可逆</div></a>
+<h2>② Hero 动画（一格一格点亮）</h2>
+<img src="assets/hero-percolation.svg" alt="Hero 渗流动画">
+<p class="d">右边那片逐格点亮的过程，就是台阶。</p>
 
-<hr><h2>设计说明</h2>
-<a class="card" href="assets/DESIGN.md"><div class="t">DESIGN.md</div>
-<div class="d">颜色 · 节奏 · 状态含义 · 文件用途</div></a>
-<a class="card" href="assets/status.json"><div class="t">status.json</div>
-<div class="d">六状态的唯一真相源：颜色与呼吸节奏</div></a>
+<h2>③ 六状态（六种呼吸相）</h2>
+<img src="assets/states-percolation.svg" alt="六状态">
+<p class="d">idle 冷绿 4s 慢呼吸 · thinking 琥珀 0.8s · busy 高亮流动 · blocked 低饱和冻结 · error 抽一下停 · success 暖脉冲回落。<br>
+都绑在实测上：blocked 刻意低饱和（受阻≠失败），success 不常驻（台阶后加大 80 倍无趋势）。</p>
+
+<h2>④ 可交互演示台（就在这一页里）</h2>
+<iframe src="demo/index.html" title="演示台"></iframe>
+<p class="d">拖 β 滑块看拐点，或粘贴任意文本实时算字符熵与独特三元组占比。</p>
+
+<h2>⑤ 源文件</h2>
+<div class="row">
+<a href="assets/hero-percolation.svg">hero-percolation.svg</a>
+<a href="assets/states-percolation.svg">states-percolation.svg</a>
+<a href="assets/status.json">status.json</a>
+<a href="assets/DESIGN.md">DESIGN.md</a>
+<a href="assets/states-dendrite.svg">枝晶版（被刷下去的）</a>
+<a href="https://github.com/zhumeiyan/eo-devo-demo">仓库主页</a>
+</div>
+
 </body></html>
