@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" width="1440" height="320"
+     role="img" aria-label="EO devo 状态立面">
+  <title>EO devo 状态立面</title>
+  <style>
+
+  .idle .ring { animation: br 4.0s ease-in-out infinite alternate; transform-origin: center; }
+  @keyframes br { from { opacity: 0.3; stroke: #3d7a5a; } to { opacity: 0.72; stroke: #66b98a; } }
+  .idle .core { animation: cr 4.0s ease-in-out infinite alternate; }
+  @keyframes cr { from { opacity: 0.24; } to { opacity: 0.58; } }
+
+  .thinking .ring { animation: pf 0.8s ease-in-out infinite alternate; transform-origin: center; }
+  @keyframes pf { from { opacity: 0.45; stroke: #9c6416; } to { opacity: 1.0; stroke: #d9a441; } }
+  .thinking .core { animation: cf 0.8s ease-in-out infinite alternate; }
+  @keyframes cf { from { opacity: 0.32; } to { opacity: 0.90; } }
+
+  .busy .ring { animation: sp 2.4s linear infinite; transform-origin: center; stroke: #7fd8c8; }
+  @keyframes sp { from { transform: rotate(0deg); opacity: 0.75; }
+                  to   { transform: rotate(360deg); opacity: 1.00; } }
+  .busy .core { animation: rp 2.4s linear infinite; }
+  @keyframes rp { from { opacity: 1.00; } to { opacity: 0.75; } }
+  .busy .wave { animation: wv 2.4s ease-out infinite; }
+  @keyframes wv { from { r: 0.32; opacity: 0.55; } to { r: 0.62; opacity: 0.0; } }
+
+  .blocked .ring { opacity: 0.42; stroke: #7a4343; }
+  .blocked .core { opacity: 0.25; }
+  /* 冻结：脉冲停摆，刻意低饱和 —— 受阻不等于失败 */
+
+  .error .ring { opacity: 1.0; stroke: #b3322a; animation: tw 0.9s steps(1,end) forwards; transform-origin: center; }
+  @keyframes tw { 0% { transform: translate(0,0); }
+                   8% { transform: translate(-2.2, 0); }
+                   16% { transform: translate(1.6, 0.6); }
+                   24% { transform: translate(-0.8, -0.4); }
+                   100% { transform: translate(0,0); } }
+  .error .core { opacity: 0.95; }
+  /* 一次抽动后静止 */
+
+  .success .ring { animation: wd 3.0s ease-out forwards; stroke: #f0c76a; transform-origin: center; }
+  @keyframes wd { 0% { opacity: 1.0; } 18% { opacity: 0.30; }
+                  100% { opacity: 1.00; stroke: #c99a3f; } }
+  .success .core { animation: wd2 3.0s ease-out forwards; }
+  @keyframes wd2 { 0% { opacity: 1.0; } 100% { opacity: 0.60; } }
+  /* 暖脉冲后回落 idle —— 不常驻 */
+  .line { fill: none; stroke: #8b949e; stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
+  .ring { fill: none; stroke-width: 2.0; }
+  .core { fill: #e6edf3; }
+  text { font-family: "WenQuanYi Micro Hei", system-ui, -apple-system, "PingFang SC", sans-serif; }
+  </style>
+  <rect width="1440" height="320" fill="#0d1117"/>
+  <g class="idle">
+    <circle class="ring" cx="62.0" cy="80.0" r="34.0"/>
+  <path class="line" d="M 42.1 76.5 L 45.2 74.0 L 47.7 72.2 L 49.7 71.4"/>
+  <path class="line" d="M 49.7 71.4 L 51.2 68.6"/>
+  <path class="line" d="M 51.2 68.6 L 52.9 66.8 L 55.1 65.1 L 56.8 63.8"/>
+  <path class="line" d="M 56.8 63.8 L 57.7 62.9 L 60.3 61.9"/>
+  <path class="line" d="M 56.8 63.8 L 57.5 64.7 L 60.5 65.5"/>
+  <path class="line" d="M 56.8 63.8 L 56.6 66.4 L 59.8 68.1"/>
+  <circle class="core" cx="42.1" cy="76.5" r="1.50"/>
+  <circle class="core" cx="45.2" cy="74.0" r="1.50"/>
+  <circle class="core" cx="47.7" cy="72.2" r="1.50"/>
+  <circle class="core" cx="51.2" cy="68.6" r="1.50"/>
+  <circle class="core" cx="52.9" cy="66.8" r="1.50"/>
+  <circle class="core" cx="55.1" cy="65.1" r="1.50"/>
+  <circle class="core" cx="56.8" cy="63.8" r="1.50"/>
+  <circle class="core" cx="60.3" cy="61.9" r="1.50"/>
+  <circle class="core" cx="60.5" cy="65.5" r="1.50"/>
+  <circle class="core" cx="59.8" cy="68.1" r="1.50"/>
+  <rect x="50.1" y="67.5" width="2.2" height="2.2" fill="#e6edf3" opacity="0.9"/>
+
+    <text x="118" y="66.0" font-size="27" fill="#e6edf3" font-weight="600">待命</text>
+    <text x="118" y="90.0" font-size="15" fill="#66b98a" letter-spacing="1.4">idle</text>
+    <text x="118" y="112.0" font-size="14" fill="#8b949e">4s 慢呼吸，低亮度</text>
+  </g>
+  <g class="thinking">
+    <circle class="ring" cx="542.0" cy="80.0" r="34.0"/>
+  <path class="line" d="M 522.1 76.5 L 525.2 74.0 L 527.7 72.2 L 529.7 71.4"/>
+  <path class="line" d="M 529.7 71.4 L 531.2 68.6"/>
+  <path class="line" d="M 531.2 68.6 L 532.9 66.8 L 535.1 65.1 L 536.8 63.8"/>
+  <path class="line" d="M 536.8 63.8 L 537.7 62.9 L 540.3 61.9"/>
+  <path class="line" d="M 536.8 63.8 L 537.5 64.7 L 540.5 65.5"/>
+  <path class="line" d="M 536.8 63.8 L 536.6 66.4 L 539.8 68.1"/>
+  <circle class="core" cx="522.1" cy="76.5" r="1.50"/>
+  <circle class="core" cx="525.2" cy="74.0" r="1.50"/>
+  <circle class="core" cx="527.7" cy="72.2" r="1.50"/>
+  <circle class="core" cx="531.2" cy="68.6" r="1.50"/>
+  <circle class="core" cx="532.9" cy="66.8" r="1.50"/>
+  <circle class="core" cx="535.1" cy="65.1" r="1.50"/>
+  <circle class="core" cx="536.8" cy="63.8" r="1.50"/>
+  <circle class="core" cx="540.3" cy="61.9" r="1.50"/>
+  <circle class="core" cx="540.5" cy="65.5" r="1.50"/>
+  <circle class="core" cx="539.8" cy="68.1" r="1.50"/>
+  <rect x="530.1" y="67.5" width="2.2" height="2.2" fill="#e6edf3" opacity="0.9"/>
+
+    <text x="598" y="66.0" font-size="27" fill="#e6edf3" font-weight="600">推演</text>
+    <text x="598" y="90.0" font-size="15" fill="#d9a441" letter-spacing="1.4">thinking</text>
+    <text x="598" y="112.0" font-size="14" fill="#8b949e">0.8s 快脉冲，琥珀偏移</text>
+  </g>
+  <g class="busy">
+    <circle class="ring" cx="1022.0" cy="80.0" r="34.0"/>
+    <circle class="wave" cx="1022.0" cy="80.0" r="0.32" fill="none" stroke="#7fd8c8" stroke-width="1.6"/>
+  <path class="line" d="M 1002.1 76.5 L 1005.2 74.0 L 1007.7 72.2 L 1009.7 71.4"/>
+  <path class="line" d="M 1009.7 71.4 L 1011.2 68.6"/>
+  <path class="line" d="M 1011.2 68.6 L 1012.9 66.8 L 1015.1 65.1 L 1016.8 63.8"/>
+  <path class="line" d="M 1016.8 63.8 L 1017.7 62.9 L 1020.3 61.9"/>
+  <path class="line" d="M 1016.8 63.8 L 1017.5 64.7 L 1020.5 65.5"/>
+  <path class="line" d="M 1016.8 63.8 L 1016.6 66.4 L 1019.8 68.1"/>
+  <circle class="core" cx="1002.1" cy="76.5" r="1.50"/>
+  <circle class="core" cx="1005.2" cy="74.0" r="1.50"/>
+  <circle class="core" cx="1007.7" cy="72.2" r="1.50"/>
+  <circle class="core" cx="1011.2" cy="68.6" r="1.50"/>
+  <circle class="core" cx="1012.9" cy="66.8" r="1.50"/>
+  <circle class="core" cx="1015.1" cy="65.1" r="1.50"/>
+  <circle class="core" cx="1016.8" cy="63.8" r="1.50"/>
+  <circle class="core" cx="1020.3" cy="61.9" r="1.50"/>
+  <circle class="core" cx="1020.5" cy="65.5" r="1.50"/>
+  <circle class="core" cx="1019.8" cy="68.1" r="1.50"/>
+  <rect x="1010.1" y="67.5" width="2.2" height="2.2" fill="#e6edf3" opacity="0.9"/>
+
+    <text x="1078" y="66.0" font-size="27" fill="#e6edf3" font-weight="600">运转</text>
+    <text x="1078" y="90.0" font-size="15" fill="#7fd8c8" letter-spacing="1.4">busy</text>
+    <text x="1078" y="112.0" font-size="14" fill="#8b949e">持续旋转 + 波纹，亮度拉高</text>
+  </g>
+  <g class="blocked">
+    <circle class="ring" cx="62.0" cy="240.0" r="34.0"/>
+  <path class="line" d="M 42.1 236.5 L 45.2 234.0 L 47.7 232.2 L 49.7 231.4"/>
+  <path class="line" d="M 49.7 231.4 L 51.2 228.6"/>
+  <path class="line" d="M 51.2 228.6 L 52.9 226.8 L 55.1 225.1 L 56.8 223.8"/>
+  <path class="line" d="M 56.8 223.8 L 57.7 222.9 L 60.3 221.9"/>
+  <path class="line" d="M 56.8 223.8 L 57.5 224.7 L 60.5 225.5"/>
+  <path class="line" d="M 56.8 223.8 L 56.6 226.4 L 59.8 228.1"/>
+  <circle class="core" cx="42.1" cy="236.5" r="1.50"/>
+  <circle class="core" cx="45.2" cy="234.0" r="1.50"/>
+  <circle class="core" cx="47.7" cy="232.2" r="1.50"/>
+  <circle class="core" cx="51.2" cy="228.6" r="1.50"/>
+  <circle class="core" cx="52.9" cy="226.8" r="1.50"/>
+  <circle class="core" cx="55.1" cy="225.1" r="1.50"/>
+  <circle class="core" cx="56.8" cy="223.8" r="1.50"/>
+  <circle class="core" cx="60.3" cy="221.9" r="1.50"/>
+  <circle class="core" cx="60.5" cy="225.5" r="1.50"/>
+  <circle class="core" cx="59.8" cy="228.1" r="1.50"/>
+  <rect x="50.1" y="227.5" width="2.2" height="2.2" fill="#e6edf3" opacity="0.9"/>
+
+    <text x="118" y="226.0" font-size="27" fill="#e6edf3" font-weight="600">受阻</text>
+    <text x="118" y="250.0" font-size="15" fill="#a35f5f" letter-spacing="1.4">blocked</text>
+    <text x="118" y="272.0" font-size="14" fill="#8b949e">脉冲冻结，低饱和红</text>
+  </g>
+  <g class="error">
+    <circle class="ring" cx="542.0" cy="240.0" r="34.0"/>
+  <path class="line" d="M 522.1 236.5 L 525.2 234.0 L 527.7 232.2 L 529.7 231.4"/>
+  <path class="line" d="M 529.7 231.4 L 531.2 228.6"/>
+  <path class="line" d="M 531.2 228.6 L 532.9 226.8 L 535.1 225.1 L 536.8 223.8"/>
+  <path class="line" d="M 536.8 223.8 L 537.7 222.9 L 540.3 221.9"/>
+  <path class="line" d="M 536.8 223.8 L 537.5 224.7 L 540.5 225.5"/>
+  <path class="line" d="M 536.8 223.8 L 536.6 226.4 L 539.8 228.1"/>
+  <circle class="core" cx="522.1" cy="236.5" r="1.50"/>
+  <circle class="core" cx="525.2" cy="234.0" r="1.50"/>
+  <circle class="core" cx="527.7" cy="232.2" r="1.50"/>
+  <circle class="core" cx="531.2" cy="228.6" r="1.50"/>
+  <circle class="core" cx="532.9" cy="226.8" r="1.50"/>
+  <circle class="core" cx="535.1" cy="225.1" r="1.50"/>
+  <circle class="core" cx="536.8" cy="223.8" r="1.50"/>
+  <circle class="core" cx="540.3" cy="221.9" r="1.50"/>
+  <circle class="core" cx="540.5" cy="225.5" r="1.50"/>
+  <circle class="core" cx="539.8" cy="228.1" r="1.50"/>
+  <rect x="530.1" y="227.5" width="2.2" height="2.2" fill="#e6edf3" opacity="0.9"/>
+
+    <text x="598" y="226.0" font-size="27" fill="#e6edf3" font-weight="600">失效</text>
+    <text x="598" y="250.0" font-size="15" fill="#e0554a" letter-spacing="1.4">error</text>
+    <text x="598" y="272.0" font-size="14" fill="#8b949e">红色 + 一次抽动后静止</text>
+  </g>
+  <g class="success">
+    <circle class="ring" cx="1022.0" cy="240.0" r="34.0"/>
+  <path class="line" d="M 1002.1 236.5 L 1005.2 234.0 L 1007.7 232.2 L 1009.7 231.4"/>
+  <path class="line" d="M 1009.7 231.4 L 1011.2 228.6"/>
+  <path class="line" d="M 1011.2 228.6 L 1012.9 226.8 L 1015.1 225.1 L 1016.8 223.8"/>
+  <path class="line" d="M 1016.8 223.8 L 1017.7 222.9 L 1020.3 221.9"/>
+  <path class="line" d="M 1016.8 223.8 L 1017.5 224.7 L 1020.5 225.5"/>
+  <path class="line" d="M 1016.8 223.8 L 1016.6 226.4 L 1019.8 228.1"/>
+  <circle class="core" cx="1002.1" cy="236.5" r="1.50"/>
+  <circle class="core" cx="1005.2" cy="234.0" r="1.50"/>
+  <circle class="core" cx="1007.7" cy="232.2" r="1.50"/>
+  <circle class="core" cx="1011.2" cy="228.6" r="1.50"/>
+  <circle class="core" cx="1012.9" cy="226.8" r="1.50"/>
+  <circle class="core" cx="1015.1" cy="225.1" r="1.50"/>
+  <circle class="core" cx="1016.8" cy="223.8" r="1.50"/>
+  <circle class="core" cx="1020.3" cy="221.9" r="1.50"/>
+  <circle class="core" cx="1020.5" cy="225.5" r="1.50"/>
+  <circle class="core" cx="1019.8" cy="228.1" r="1.50"/>
+  <rect x="1010.1" y="227.5" width="2.2" height="2.2" fill="#e6edf3" opacity="0.9"/>
+
+    <text x="1078" y="226.0" font-size="27" fill="#e6edf3" font-weight="600">成立</text>
+    <text x="1078" y="250.0" font-size="15" fill="#f0c76a" letter-spacing="1.4">success</text>
+    <text x="1078" y="272.0" font-size="14" fill="#8b949e">短暂暖脉冲，回落 idle</text>
+  </g>
+</svg>
