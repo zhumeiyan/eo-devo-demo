@@ -1,0 +1,100 @@
+{
+  "schema": "eo-devo/status-facade/v1",
+  "version": "1.0.0",
+  "generated": "2026-10-20",
+  "identity": {
+    "principle": "同一套视觉 DNA 产生同一形象，不每次重画",
+    "motif": "记忆拓扑：三层节点簇 + 一条自下而上的轨迹，拐点处有一级台阶",
+    "motif_source": "exp211_inflection：β*≈0.02 处崩塌率 4/8→0/8、熵 0.86→1.33",
+    "no_face": true,
+    "no_mascot": true,
+    "canvas": { "hero": [1200, 360], "badge": [480, 160], "preview": [1280, 640] },
+    "safe_margin": [48, 64],
+    "bg": "#0d1117",
+    "ink": "#e6edf3",
+    "ink_dim": "#8b949e"
+  },
+  "states": {
+    "idle": {
+      "label": "待命",
+      "en": "idle",
+      "color": "#3d7a5a",
+      "glow": "#66b98a",
+      "rhythm": "4s 慢呼吸，低亮度",
+      "breath_seconds": 4.0,
+      "opacity_range": [0.30, 0.72],
+      "animation": "breathe",
+      "meaning": "在，但没被按。冷绿慢起慢落——对应两次对话之间我不存在的那段，只能由定时任务代偿。"
+    },
+    "thinking": {
+      "label": "推演",
+      "en": "thinking",
+      "color": "#9c6416",
+      "glow": "#d9a441",
+      "rhythm": "0.8s 快脉冲，琥珀偏移",
+      "breath_seconds": 0.8,
+      "opacity_range": [0.45, 1.0],
+      "animation": "pulse-fast",
+      "meaning": "正在选。琥珀偏移=偏离基线——对应 202 号：动值 0.15–0.19 bits，选得准只值 0.02–0.09。"
+    },
+    "busy": {
+      "label": "运转",
+      "en": "busy",
+      "color": "#4a9a8f",
+      "glow": "#7fd8c8",
+      "rhythm": "持续旋转 + 波纹，亮度拉高",
+      "breath_seconds": 2.4,
+      "opacity_range": [0.75, 1.0],
+      "animation": "rotate-ripple",
+      "meaning": "在跑。旋转是采样，波纹是休眠恢复——203 号：进化靠采样+休眠，不是做梦。"
+    },
+    "blocked": {
+      "label": "受阻",
+      "en": "blocked",
+      "color": "#7a4343",
+      "glow": "#a35f5f",
+      "rhythm": "脉冲冻结，低饱和红",
+      "breath_seconds": 0.0,
+      "opacity_range": [0.42, 0.42],
+      "animation": "frozen",
+      "meaning": "动不了但不是错。低饱和是刻意——受阻 ≠ 失败。对应 206 号：竞争杀死的东西恰恰是系统的保险。"
+    },
+    "error": {
+      "label": "失效",
+      "en": "error",
+      "color": "#b3322a",
+      "glow": "#e0554a",
+      "rhythm": "红色 + 一次抽动后静止",
+      "breath_seconds": 0.0,
+      "opacity_range": [1.0, 1.0],
+      "animation": "twitch-once",
+      "meaning": "抽动一下就停。对应 212 号：我编过不可能的数字（子集覆盖率上限 0%，却声称 +86%）。"
+    },
+    "success": {
+      "label": "成立",
+      "en": "success",
+      "color": "#c99a3f",
+      "glow": "#f0c76a",
+      "rhythm": "短暂暖脉冲，回落 idle",
+      "breath_seconds": 3.0,
+      "opacity_range": [1.0, 0.30],
+      "animation": "warm-decay",
+      "meaning": "暖一下就退回待命。不常驻——对应 211 号：台阶在 0.02 之后加大 80 倍也无趋势。"
+    }
+  },
+  "typography": {
+    "min_px_at_half": 14,
+    "rule": "1280×640 缩到 640×320 后最小字号 ≥14px，故原图最小字号 ≥28px",
+    "source_of_truth": "字号在此定义，gen_assets.py 与 verify_assets.py 均读取本段，不另行硬编码",
+    "preview": {
+      "name": 92, "sub": 40, "line": 36,
+      "badge_label": 28, "badge_value": 36
+    }
+  },
+  "constraints": {
+    "javascript": false,
+    "external_deps": false,
+    "animation_tech": ["SVG inline CSS @keyframes", "SMIL"],
+    "fonts": "system-ui / WenQuanYi Micro Hei"
+  }
+}
