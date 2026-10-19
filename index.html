@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EO devo · 演示台</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0e1116;color:#e6e8ea;
+font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;padding:24px 16px 60px;max-width:900px;margin:0 auto}
+h1{font-size:22px;margin:0 0 6px;letter-spacing:.5px}
+.sub{color:#9aa4ae;font-size:14px;margin:0 0 24px;line-height:1.6}
+a.card{display:block;background:#161b22;border:1px solid #262c36;border-radius:10px;
+padding:14px 16px;margin-bottom:12px;text-decoration:none;color:#e6e8ea}
+a.card:hover{border-color:#3d4756}
+.t{font-size:15px;font-weight:600;margin-bottom:4px}
+.d{font-size:13px;color:#9aa4ae;line-height:1.5}
+.tag{display:inline-block;font-size:11px;background:#1f2630;color:#8b98a5;
+border-radius:4px;padding:2px 7px;margin-left:8px;vertical-align:1px}
+img{width:100%;border-radius:8px;display:block;margin:10px 0}
+hr{border:0;border-top:1px solid #262c36;margin:28px 0}
+h2{font-size:16px;margin:0 0 12px;color:#c9d1d9}
+</style></head><body>
+<h1>EO devo · 演示台</h1>
+<p class="sub">稿件 1163 配套。一个数字胚胎从单细胞发育到器官的过程中，<br>什么时候开始长出层次？答案是：拐点 β* ≈ 0.02。</p>
+
+<h2>先看成品</h2>
+<a class="card" href="demo/index.html"><div class="t">可交互演示台<span class="tag">能拖滑块</span></div>
+<div class="d">拖 β 滑块看拐点，粘贴任意文本实时算独特三元组占比</div></a>
+<a class="card" href="assets/preview-percolation.png"><div class="t">渗流阈值成品图<span class="tag">PNG</span></div>
+<div class="d">左 p=0.35 无贯通簇 · 右 p=0.65 出现分层贯通簇</div></a>
+
+<hr><h2>渗流阈值（胜出母题）</h2>
+<img src="assets/preview-percolation.png" alt="渗流预览">
+<div class="d">同构于 211 号实测：β&lt;0.02 崩塌 4/8 → β*≈0.02 台阶 → β 加大 80 倍无趋势。<br>
+渗流是唯一同时命中阈值 T + 平台 P + 不可逆 I 三个结构签名的母题。</div>
+
+<hr><h2>动态状态 SVG（浏览器打开才有动画）</h2>
+<a class="card" href="assets/hero-percolation.svg"><div class="t">Hero · 渗流<span class="tag">1200×420</span></div>
+<div class="d">右边一格一格点亮的过程，就是台阶</div></a>
+<a class="card" href="assets/states-percolation.svg"><div class="t">六状态 · 渗流<span class="tag">六种呼吸相</span></div>
+<div class="d">idle / thinking / busy / blocked / error / success</div></a>
+<a class="card" href="assets/states-dendrite.svg"><div class="t">六状态 · 枝晶<span class="tag">被刷下去的那版</span></div>
+<div class="d">只命中 T+B+O，缺平台与不可逆</div></a>
+
+<hr><h2>设计说明</h2>
+<a class="card" href="assets/DESIGN.md"><div class="t">DESIGN.md</div>
+<div class="d">颜色 · 节奏 · 状态含义 · 文件用途</div></a>
+<a class="card" href="assets/status.json"><div class="t">status.json</div>
+<div class="d">六状态的唯一真相源：颜色与呼吸节奏</div></a>
+</body></html>
