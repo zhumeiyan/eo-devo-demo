@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360"
+     role="img" aria-label="EO devo 状态立面">
+  <title>EO devo 状态立面</title>
+  <style>
+
+  .ring { animation: sp 2.4s linear infinite; transform-origin: center; stroke: #7fd8c8; }
+  @keyframes sp { from { transform: rotate(0deg); opacity: 0.75; }
+                  to   { transform: rotate(360deg); opacity: 1.00; } }
+  .core { animation: rp 2.4s linear infinite; }
+  @keyframes rp { from { opacity: 1.00; } to { opacity: 0.75; } }
+  .wave { animation: wv 2.4s ease-out infinite; }
+  @keyframes wv { from { r: 0.32; opacity: 0.55; } to { r: 0.62; opacity: 0.0; } }
+  .line { fill: none; stroke: #8b949e; stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; }
+  .ring { fill: none; stroke-width: 2.0; }
+  .core { fill: #e6edf3; }
+  text { font-family: "WenQuanYi Micro Hei", system-ui, -apple-system, "PingFang SC", sans-serif; }
+  </style>
+  <rect width="1200" height="360" fill="#0d1117"/>
+  <circle class="ring" cx="174.0" cy="180.0" r="96.0"/>
+  <circle class="wave" cx="174.0" cy="180.0" r="0.32" fill="none" stroke="#7fd8c8" stroke-width="2.2"/>
+  <path class="line" d="M 121.9 222.2 L 139.3 207.3 L 154.2 197.4 L 165.3 192.4"/>
+  <path class="line" d="M 165.3 192.4 L 174.0 176.3"/>
+  <path class="line" d="M 174.0 176.3 L 183.9 166.4 L 196.3 156.4 L 206.2 149.0"/>
+  <path class="line" d="M 206.2 149.0 L 211.2 144.0 L 226.1 137.8"/>
+  <path class="line" d="M 206.2 149.0 L 210.0 154.0 L 227.3 158.9"/>
+  <path class="line" d="M 206.2 149.0 L 205.0 163.9 L 223.6 173.8"/>
+  <circle class="core" cx="121.9" cy="222.2" r="3.40"/>
+  <circle class="core" cx="139.3" cy="207.3" r="3.40"/>
+  <circle class="core" cx="154.2" cy="197.4" r="3.40"/>
+  <circle class="core" cx="174.0" cy="176.3" r="3.40"/>
+  <circle class="core" cx="183.9" cy="166.4" r="3.40"/>
+  <circle class="core" cx="196.3" cy="156.4" r="3.40"/>
+  <circle class="core" cx="206.2" cy="149.0" r="3.40"/>
+  <circle class="core" cx="226.1" cy="137.8" r="3.40"/>
+  <circle class="core" cx="227.3" cy="158.9" r="3.40"/>
+  <circle class="core" cx="223.6" cy="173.8" r="3.40"/>
+  <rect x="172.9" y="175.2" width="2.2" height="2.2" fill="#e6edf3" opacity="0.9"/>
+
+  <text x="306" y="126" font-size="46" fill="#e6edf3" font-weight="700" letter-spacing="0.5">EO devo · 状态立面</text>
+  <text x="306" y="176" font-size="21" fill="#8b949e">一个数字胚胎从单细胞到器官 —— 什么时候开始长出层次？</text>
+  <text x="306" y="216" font-size="18" fill="#8b949e">拐点 β*≈0.02 · 崩塌 4/8→0/8 · 代价 −0.0076</text>
+  <rect x="306" y="252" width="14" height="14" rx="3" fill="#3d7a5a"/>
+  <text x="328" y="264" font-size="17" fill="#e6edf3">待命</text>
+  <text x="306" y="288" font-size="13" fill="#8b949e">4s 慢呼吸，低亮度</text>
+  <rect x="454" y="252" width="14" height="14" rx="3" fill="#9c6416"/>
+  <text x="476" y="264" font-size="17" fill="#e6edf3">推演</text>
+  <text x="454" y="288" font-size="13" fill="#8b949e">0.8s 快脉冲，琥珀偏移</text>
+  <rect x="602" y="252" width="14" height="14" rx="3" fill="#4a9a8f"/>
+  <text x="624" y="264" font-size="17" fill="#e6edf3">运转</text>
+  <text x="602" y="288" font-size="13" fill="#8b949e">持续旋转 + 波纹，亮度拉高</text>
+  <rect x="750" y="252" width="14" height="14" rx="3" fill="#7a4343"/>
+  <text x="772" y="264" font-size="17" fill="#e6edf3">受阻</text>
+  <text x="750" y="288" font-size="13" fill="#8b949e">脉冲冻结，低饱和红</text>
+  <rect x="898" y="252" width="14" height="14" rx="3" fill="#b3322a"/>
+  <text x="920" y="264" font-size="17" fill="#e6edf3">失效</text>
+  <text x="898" y="288" font-size="13" fill="#8b949e">红色 + 一次抽动后静止</text>
+  <rect x="1046" y="252" width="14" height="14" rx="3" fill="#c99a3f"/>
+  <text x="1068" y="264" font-size="17" fill="#e6edf3">成立</text>
+  <text x="1046" y="288" font-size="13" fill="#8b949e">短暂暖脉冲，回落 idle</text>
+</svg>
