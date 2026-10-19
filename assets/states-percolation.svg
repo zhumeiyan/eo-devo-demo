@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img" aria-label="六状态渗流立面">
+<style>
+<![CDATA[
+@keyframes pc-in { 0%{fill-opacity:.06} 60%{fill-opacity:1} 100%{fill-opacity:.88} }
+@keyframes br-slow { 0%{fill-opacity:.28} 50%{fill-opacity:.72} 100%{fill-opacity:.28} }
+@keyframes br-fast { 0%{fill-opacity:.45} 50%{fill-opacity:1} 100%{fill-opacity:.45} }
+@keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+@keyframes twitch { 0%{transform:translate(0,0)} 12%{transform:translate(-3px,1px)}
+                    24%{transform:translate(3px,-1px)} 36%{transform:translate(-2px,0)}
+                    100%{transform:translate(0,0)} }
+@keyframes warm { 0%{fill-opacity:1} 35%{fill-opacity:.9} 100%{fill-opacity:.3} }
+@keyframes freeze { 0%,100%{fill-opacity:.42} }
+.pc-L { animation: pc-in 2.4s ease-out both; }
+.pc-R { animation: pc-in 2.4s ease-out both; }
+.pc-S { animation: pc-in 1.8s ease-out both; }
+.br-L { animation: br-slow 4s ease-in-out infinite; }
+.br-R { animation: br-slow 4s ease-in-out infinite; }
+.br-S { animation: br-slow 4s ease-in-out infinite; }
+.br-fast { animation: br-fast .8s ease-in-out infinite; }
+.br-frozen { animation: freeze .1s linear infinite; }
+.br-warm { animation: warm 3s ease-out forwards; }
+.tw-once { animation: twitch .6s ease-out 1 both; }
+.ring { animation: spin 14s linear infinite; transform-origin: 600px 220px; }
+]]>
+</style>
+<rect width="960" height="480" fill="#0d1117"/>
+<rect x="0" y="0" width="480" height="160" fill="#0d1117" stroke="#21262d" stroke-width="1"/><text x="24" y="56" font-family="WenQuanYi Micro Hei, DejaVu Sans, sans-serif" font-size="30" fill="#3d7a5a">待命</text><text x="24" y="86" font-family="WenQuanYi Micro Hei, DejaVu Sans, sans-serif" font-size="17" fill="#8b949e">idle</text><text x="24" y="112" font-family="WenQuanYi Micro Hei, DejaVu Sans, sans-serif" font-size="14" fill="#8b949e">4s 慢呼吸，低亮度</text><rect class="br-S" x="232" y="34" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.00s"/>
+<rect class="br-S" x="232" y="58" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.00s"/>
+<rect class="br-S" x="232" y="82" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.00s"/>
+<rect class="br-S" x="232" y="106" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.00s"/>
+<rect class="br-S" x="256" y="34" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.05s"/>
+<rect class="br-S" x="256" y="58" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.05s"/>
+<rect class="br-S" x="256" y="82" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.05s"/>
+<rect class="br-S" x="256" y="106" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.05s"/>
+<rect class="br-S" x="280" y="34" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.10s"/>
+<rect class="br-S" x="280" y="58" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.10s"/>
+<rect class="br-S" x="280" y="82" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.10s"/>
+<rect class="br-S" x="280" y="106" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.10s"/>
+<rect class="br-S" x="304" y="34" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-S" x="304" y="82" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-S" x="304" y="106" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-S" x="328" y="58" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.20s"/>
+<rect class="br-S" x="328" y="82" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.20s"/>
+<rect class="br-S" x="352" y="34" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.25s"/>
+<rect class="br-S" x="352" y="58" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.25s"/>
+<rect class="br-S" x="352" y="82" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.25s"/>
+<rect class="br-S" x="352" y="106" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.25s"/>
+<rect class="br-S" x="376" y="34" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.30s"/>
+<rect class="br-S" x="376" y="58" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.30s"/>
+<rect class="br-S" x="376" y="82" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.30s"/>
+<rect class="br-S" x="400" y="58" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.35s"/>
+<rect class="br-S" x="400" y="82" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.35s"/>
+<rect class="br-S" x="400" y="106" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.35s"/>
+<rect class="br-S" x="424" y="34" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.40s"/>
+<rect class="br-S" x="424" y="58" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.40s"/>
+<rect class="br-S" x="424" y="106" width="20" height="20" rx="2" fill="#3d7a5a" fill-opacity="0.85" style="animation-delay:0.40s"/>
+<rect x="480" y="0" width="480" height="160" fill="#0d1117" stroke="#21262d" stroke-width="1"/><text x="504" y="56" font-family="WenQuanYi Micro Hei, DejaVu Sans, sans-serif" font-size="30" fill="#9c6416">推演</text><text x="504" y="86" font-family="WenQuanYi Micro Hei, DejaVu Sans, sans-serif" font-size="17" fill="#8b949e">thinking</text><text x="504" y="112" font-family="WenQuanYi Micro Hei, DejaVu Sans, sans-serif" font-size="14" fill="#8b949e">0.8s 快脉冲，琥珀偏移</text><rect class="br-fast" x="712" y="58" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.00s"/>
+<rect class="br-fast" x="712" y="106" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.00s"/>
+<rect class="br-fast" x="736" y="58" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.05s"/>
+<rect class="br-fast" x="736" y="82" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.05s"/>
+<rect class="br-fast" x="736" y="106" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.05s"/>
+<rect class="br-fast" x="760" y="34" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.10s"/>
+<rect class="br-fast" x="760" y="58" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.10s"/>
+<rect class="br-fast" x="760" y="82" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.10s"/>
+<rect class="br-fast" x="760" y="106" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.10s"/>
+<rect class="br-fast" x="784" y="34" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-fast" x="784" y="58" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-fast" x="784" y="82" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-fast" x="784" y="106" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-fast" x="808" y="34" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.20s"/>
+<rect class="br-fast" x="808" y="58" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.20s"/>
+<rect class="br-fast" x="808" y="82" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.20s"/>
+<rect class="br-fast" x="808" y="106" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.20s"/>
+<rect class="br-fast" x="832" y="82" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.25s"/>
+<rect class="br-fast" x="832" y="106" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.25s"/>
+<rect class="br-fast" x="856" y="58" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.30s"/>
+<rect class="br-fast" x="856" y="82" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.30s"/>
+<rect class="br-fast" x="856" y="106" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.30s"/>
+<rect class="br-fast" x="880" y="34" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.35s"/>
+<rect class="br-fast" x="880" y="58" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.35s"/>
+<rect class="br-fast" x="880" y="82" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.35s"/>
+<rect class="br-fast" x="880" y="106" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.35s"/>
+<rect class="br-fast" x="904" y="58" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.40s"/>
+<rect class="br-fast" x="904" y="106" width="20" height="20" rx="2" fill="#9c6416" fill-opacity="0.85" style="animation-delay:0.40s"/>
+<rect x="0" y="160" width="480" height="160" fill="#0d1117" stroke="#21262d" stroke-width="1"/><text x="24" y="216" font-family="WenQuanYi Micro Hei, DejaVu Sans, sans-serif" font-size="30" fill="#4a9a8f">运转</text><text x="24" y="246" font-family="WenQuanYi Micro Hei, DejaVu Sans, sans-serif" font-size="17" fill="#8b949e">busy</text><text x="24" y="272" font-family="WenQuanYi Micro Hei, DejaVu Sans, sans-serif" font-size="14" fill="#8b949e">持续旋转 + 波纹，亮度拉高</text><rect class="br-S" x="232" y="194" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.00s"/>
+<rect class="br-S" x="232" y="218" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.00s"/>
+<rect class="br-S" x="232" y="242" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.00s"/>
+<rect class="br-S" x="256" y="194" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.05s"/>
+<rect class="br-S" x="256" y="218" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.05s"/>
+<rect class="br-S" x="256" y="242" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.05s"/>
+<rect class="br-S" x="256" y="266" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.05s"/>
+<rect class="br-S" x="280" y="218" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.10s"/>
+<rect class="br-S" x="280" y="266" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.10s"/>
+<rect class="br-S" x="304" y="194" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-S" x="304" y="242" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-S" x="304" y="266" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-S" x="328" y="194" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.20s"/>
+<rect class="br-S" x="328" y="242" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.20s"/>
+<rect class="br-S" x="328" y="266" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.20s"/>
+<rect class="br-S" x="352" y="194" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.25s"/>
+<rect class="br-S" x="352" y="218" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.25s"/>
+<rect class="br-S" x="352" y="242" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.25s"/>
+<rect class="br-S" x="352" y="266" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.25s"/>
+<rect class="br-S" x="376" y="194" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.30s"/>
+<rect class="br-S" x="376" y="218" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.30s"/>
+<rect class="br-S" x="376" y="242" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.30s"/>
+<rect class="br-S" x="376" y="266" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.30s"/>
+<rect class="br-S" x="400" y="194" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.35s"/>
+<rect class="br-S" x="400" y="218" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.35s"/>
+<rect class="br-S" x="400" y="242" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.35s"/>
+<rect class="br-S" x="400" y="266" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.35s"/>
+<rect class="br-S" x="424" y="194" width="20" height="20" rx="2" fill="#4a9a8f" fill-opacity="0.85" style="animation-delay:0.40s"/>
+<rect x="480" y="160" width="480" height="160" fill="#0d1117" stroke="#21262d" stroke-width="1"/><text x="504" y="216" font-family="WenQuanYi Micro Hei, DejaVu Sans, sans-serif" font-size="30" fill="#7a4343">受阻</text><text x="504" y="246" font-family="WenQuanYi Micro Hei, DejaVu Sans, sans-serif" font-size="17" fill="#8b949e">blocked</text><text x="504" y="272" font-family="WenQuanYi Micro Hei, DejaVu Sans, sans-serif" font-size="14" fill="#8b949e">脉冲冻结，低饱和红</text><rect class="br-frozen" x="712" y="194" width="20" height="20" rx="2" fill="#7a4343" fill-opacity="0.85" style="animation-delay:0.00s"/>
+<rect class="br-frozen" x="712" y="242" width="20" height="20" rx="2" fill="#30363d" fill-opacity="0.50" style="animation-delay:0.00s"/>
+<rect class="br-frozen" x="712" y="266" width="20" height="20" rx="2" fill="#30363d" fill-opacity="0.50" style="animation-delay:0.00s"/>
+<rect class="br-frozen" x="736" y="194" width="20" height="20" rx="2" fill="#7a4343" fill-opacity="0.85" style="animation-delay:0.05s"/>
+<rect class="br-frozen" x="736" y="218" width="20" height="20" rx="2" fill="#7a4343" fill-opacity="0.85" style="animation-delay:0.05s"/>
+<rect class="br-frozen" x="760" y="194" width="20" height="20" rx="2" fill="#7a4343" fill-opacity="0.85" style="animation-delay:0.10s"/>
+<rect class="br-frozen" x="760" y="242" width="20" height="20" rx="2" fill="#7a4343" fill-opacity="0.85" style="animation-delay:0.10s"/>
+<rect class="br-frozen" x="784" y="194" width="20" height="20" rx="2" fill="#7a4343" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-frozen" x="784" y="218" width="20" height="20" rx="2" fill="#7a4343" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-frozen" x="784" y="242" width="20" height="20" rx="2" fill="#7a4343" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-frozen" x="784" y="266" width="20" height="20" rx="2" fill="#7a4343" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-frozen" x="808" y="218" width="20" height="20" rx="2" fill="#7a4343" fill-opacity="0.85" style="animation-delay:0.20s"/>
+<rect class="br-frozen" x="808" y="242" width="20" height="20" rx="2" fill="#7a4343" fill-opacity="0.85" style="animation-delay:0.20s"/>
+<rect class="br-frozen" x="832" y="218" width="20" height="20" rx="2" fill="#7a4343" fill-opacity="0.85" style="animation-delay:0.25s"/>
+<rect class="br-frozen" x="856" y="194" width="20" height="20" rx="2" fill="#7a4343" fill-opacity="0.85" style="animation-delay:0.30s"/>
+<rect class="br-frozen" x="856" y="218" width="20" height="20" rx="2" fill="#7a4343" fill-opacity="0.85" style="animation-delay:0.30s"/>
+<rect class="br-frozen" x="856" y="242" width="20" height="20" rx="2" fill="#7a4343" fill-opacity="0.85" style="animation-delay:0.30s"/>
+<rect class="br-frozen" x="880" y="194" width="20" height="20" rx="2" fill="#7a4343" fill-opacity="0.85" style="animation-delay:0.35s"/>
+<rect class="br-frozen" x="880" y="218" width="20" height="20" rx="2" fill="#7a4343" fill-opacity="0.85" style="animation-delay:0.35s"/>
+<rect class="br-frozen" x="880" y="242" width="20" height="20" rx="2" fill="#7a4343" fill-opacity="0.85" style="animation-delay:0.35s"/>
+<rect class="br-frozen" x="880" y="266" width="20" height="20" rx="2" fill="#7a4343" fill-opacity="0.85" style="animation-delay:0.35s"/>
+<rect class="br-frozen" x="904" y="242" width="20" height="20" rx="2" fill="#7a4343" fill-opacity="0.85" style="animation-delay:0.40s"/>
+<rect x="0" y="320" width="480" height="160" fill="#0d1117" stroke="#21262d" stroke-width="1"/><text x="24" y="376" font-family="WenQuanYi Micro Hei, DejaVu Sans, sans-serif" font-size="30" fill="#b3322a">失效</text><text x="24" y="406" font-family="WenQuanYi Micro Hei, DejaVu Sans, sans-serif" font-size="17" fill="#8b949e">error</text><text x="24" y="432" font-family="WenQuanYi Micro Hei, DejaVu Sans, sans-serif" font-size="14" fill="#8b949e">红色 + 一次抽动后静止</text><rect class="br-S tw-once" x="232" y="354" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.00s"/>
+<rect class="br-S tw-once" x="232" y="402" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.00s"/>
+<rect class="br-S tw-once" x="232" y="426" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.00s"/>
+<rect class="br-S tw-once" x="256" y="354" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.05s"/>
+<rect class="br-S tw-once" x="256" y="426" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.05s"/>
+<rect class="br-S tw-once" x="280" y="354" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.10s"/>
+<rect class="br-S tw-once" x="280" y="378" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.10s"/>
+<rect class="br-S tw-once" x="280" y="402" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.10s"/>
+<rect class="br-S tw-once" x="280" y="426" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.10s"/>
+<rect class="br-S tw-once" x="304" y="354" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-S tw-once" x="304" y="378" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-S tw-once" x="304" y="402" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-S tw-once" x="304" y="426" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-S tw-once" x="328" y="354" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.20s"/>
+<rect class="br-S tw-once" x="328" y="402" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.20s"/>
+<rect class="br-S tw-once" x="328" y="426" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.20s"/>
+<rect class="br-S tw-once" x="352" y="354" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.25s"/>
+<rect class="br-S tw-once" x="352" y="378" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.25s"/>
+<rect class="br-S tw-once" x="352" y="402" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.25s"/>
+<rect class="br-S tw-once" x="352" y="426" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.25s"/>
+<rect class="br-S tw-once" x="376" y="354" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.30s"/>
+<rect class="br-S tw-once" x="376" y="378" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.30s"/>
+<rect class="br-S tw-once" x="376" y="402" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.30s"/>
+<rect class="br-S tw-once" x="400" y="354" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.35s"/>
+<rect class="br-S tw-once" x="400" y="402" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.35s"/>
+<rect class="br-S tw-once" x="400" y="426" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.35s"/>
+<rect class="br-S tw-once" x="424" y="354" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.40s"/>
+<rect class="br-S tw-once" x="424" y="378" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.40s"/>
+<rect class="br-S tw-once" x="424" y="402" width="20" height="20" rx="2" fill="#b3322a" fill-opacity="0.85" style="animation-delay:0.40s"/>
+<rect x="480" y="320" width="480" height="160" fill="#0d1117" stroke="#21262d" stroke-width="1"/><text x="504" y="376" font-family="WenQuanYi Micro Hei, DejaVu Sans, sans-serif" font-size="30" fill="#c99a3f">成立</text><text x="504" y="406" font-family="WenQuanYi Micro Hei, DejaVu Sans, sans-serif" font-size="17" fill="#8b949e">success</text><text x="504" y="432" font-family="WenQuanYi Micro Hei, DejaVu Sans, sans-serif" font-size="14" fill="#8b949e">短暂暖脉冲，回落 idle</text><rect class="br-warm" x="712" y="354" width="20" height="20" rx="2" fill="#c99a3f" fill-opacity="0.85" style="animation-delay:0.00s"/>
+<rect class="br-warm" x="712" y="378" width="20" height="20" rx="2" fill="#c99a3f" fill-opacity="0.85" style="animation-delay:0.00s"/>
+<rect class="br-warm" x="712" y="402" width="20" height="20" rx="2" fill="#c99a3f" fill-opacity="0.85" style="animation-delay:0.00s"/>
+<rect class="br-warm" x="712" y="426" width="20" height="20" rx="2" fill="#c99a3f" fill-opacity="0.85" style="animation-delay:0.00s"/>
+<rect class="br-warm" x="736" y="354" width="20" height="20" rx="2" fill="#c99a3f" fill-opacity="0.85" style="animation-delay:0.05s"/>
+<rect class="br-warm" x="736" y="378" width="20" height="20" rx="2" fill="#c99a3f" fill-opacity="0.85" style="animation-delay:0.05s"/>
+<rect class="br-warm" x="736" y="426" width="20" height="20" rx="2" fill="#c99a3f" fill-opacity="0.85" style="animation-delay:0.05s"/>
+<rect class="br-warm" x="760" y="402" width="20" height="20" rx="2" fill="#c99a3f" fill-opacity="0.85" style="animation-delay:0.10s"/>
+<rect class="br-warm" x="760" y="426" width="20" height="20" rx="2" fill="#c99a3f" fill-opacity="0.85" style="animation-delay:0.10s"/>
+<rect class="br-warm" x="784" y="354" width="20" height="20" rx="2" fill="#c99a3f" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-warm" x="784" y="378" width="20" height="20" rx="2" fill="#c99a3f" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-warm" x="784" y="402" width="20" height="20" rx="2" fill="#c99a3f" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-warm" x="784" y="426" width="20" height="20" rx="2" fill="#c99a3f" fill-opacity="0.85" style="animation-delay:0.15s"/>
+<rect class="br-warm" x="808" y="402" width="20" height="20" rx="2" fill="#c99a3f" fill-opacity="0.85" style="animation-delay:0.20s"/>
+<rect class="br-warm" x="808" y="426" width="20" height="20" rx="2" fill="#c99a3f" fill-opacity="0.85" style="animation-delay:0.20s"/>
+<rect class="br-warm" x="832" y="402" width="20" height="20" rx="2" fill="#c99a3f" fill-opacity="0.85" style="animation-delay:0.25s"/>
+<rect class="br-warm" x="832" y="426" width="20" height="20" rx="2" fill="#c99a3f" fill-opacity="0.85" style="animation-delay:0.25s"/>
+<rect class="br-warm" x="856" y="354" width="20" height="20" rx="2" fill="#30363d" fill-opacity="0.50" style="animation-delay:0.30s"/>
+<rect class="br-warm" x="856" y="378" width="20" height="20" rx="2" fill="#30363d" fill-opacity="0.50" style="animation-delay:0.30s"/>
+<rect class="br-warm" x="856" y="426" width="20" height="20" rx="2" fill="#c99a3f" fill-opacity="0.85" style="animation-delay:0.30s"/>
+<rect class="br-warm" x="880" y="402" width="20" height="20" rx="2" fill="#c99a3f" fill-opacity="0.85" style="animation-delay:0.35s"/>
+<rect class="br-warm" x="880" y="426" width="20" height="20" rx="2" fill="#c99a3f" fill-opacity="0.85" style="animation-delay:0.35s"/>
+<rect class="br-warm" x="904" y="354" width="20" height="20" rx="2" fill="#30363d" fill-opacity="0.50" style="animation-delay:0.40s"/>
+<rect class="br-warm" x="904" y="402" width="20" height="20" rx="2" fill="#c99a3f" fill-opacity="0.85" style="animation-delay:0.40s"/>
+</svg>
